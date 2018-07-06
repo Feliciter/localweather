@@ -2,7 +2,6 @@ $(document).ready(function() {
     //start gps
     if (!navigator.geolocation){
         console.log("Geolocation is not supported by your browser");
-
     }
 
     function success(position) {
@@ -21,12 +20,9 @@ $(document).ready(function() {
             success: function(json) {
                 var html = "";
                 $(".name").html( JSON.stringify(json['name']));
-
                 var currT= (JSON.stringify(json.main['temp'])+' C');
                 var currF= (Math.round((JSON.stringify(json.main['temp']*1.8+32))))+' F';
-
                 $(".temp").html(currT);
-
                 //console.log((currF.toFixed(2)));
 
                 function modifyT() {
@@ -51,9 +47,9 @@ $(document).ready(function() {
     }
 
     function error() {
-        console.log("Unable to retrieve your location")
+        console.log("Unable to retrieve your location" );
     }
 
-    navigator.geolocation.getCurrentPosition(success, error)
+    navigator.geolocation.getCurrentPosition(success, error );
 
 } );
