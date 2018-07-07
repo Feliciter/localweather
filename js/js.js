@@ -41,15 +41,13 @@ $(document).ready(function() {
                 html += "<img src = " + imageLink + " " + "alt='" + 'Txt' + "'>";
                 $(".ico").html(html);
             }
-
         });
-
     }
-
     function error() {
         console.log("Unable to retrieve your location" );
     }
 
     navigator.geolocation.getCurrentPosition(success, error );
 
-} );
+}
+);
